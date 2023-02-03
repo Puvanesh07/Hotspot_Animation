@@ -1,0 +1,101 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div>
+
+        <div class="container">
+
+            <table class="left-table">
+              <tr>
+                <td><button class="table-button" id="table-button1">Dog_Animation 1</button></td>
+              </tr>
+              <tr>
+                <td><button class="table-button" id="table-button2">Dog_Animation 2</button></td>
+              </tr>
+              <tr>
+                <td><button class="table-button" id="table-button3">Dog_Animation 3</button></td>
+              </tr>
+            </table>
+
+      <!-- <div class="center"> -->
+      <model-viewer
+        id="viewer"
+        src="https://puvanesh07.github.io/Interaktive_Files/Dog_AppScreen_Animation.glb"
+        ios-src="https://puvanesh07.github.io/Interaktive_Files/Collar_Animation.usdz"
+        alt="A 3D model"
+        preload
+        ar
+        ar-modes="quick-look scene-viewer webxr"
+        shadow-intensity="0.97"
+        exposure="2"
+        interaction-prompt="auto"
+        camera-controls
+        autoplay="true"
+        quick-look-browsers="safari chrome"
+        camera-orbit="0deg 75deg auto"
+        min-field-of-view="10deg"
+        max-field-of-view="100deg"
+        min-camera-orbit="auto 0deg 80%"
+        max-camera-orbit="auto 180deg 100%"
+        style="width: 100%; height: 400px; top: 0px"
+      >
+      </model-viewer>
+      <!-- </div> -->
+
+      <table class="right-table">
+          <tr>
+            <td><button class="table-button" id="table-button4">Dog_Animation 4</button></td>
+          </tr>
+          <tr>
+            <td><button class="table-button" id="table-button5">Button 5</button></td>
+          </tr>
+          <tr>
+            <td><button class="table-button" id="table-button6">Button 5</button></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <button slot="ar-button"  id="ar-button"> Activate AR</button>
+    
+  </body>
+  <script>
+    function buttonClicked1() {
+  const modelViewer = document.querySelector("#viewer");
+  modelViewer.animationName = "DA_01";
+}
+function buttonClicked2() {
+  const modelViewer = document.querySelector("#viewer");
+  modelViewer.animationName = "DA_02";
+}
+function buttonClicked3() {
+  const modelViewer = document.querySelector("#viewer");
+  modelViewer.animationName = "DA_03";
+}
+function buttonClicked4() {
+  const modelViewer = document.querySelector("#viewer");
+  modelViewer.animationName = "DA_04";
+}
+window.onload = function () {
+  var btn1 = document.getElementById("table-button1");
+  btn1.addEventListener("click", buttonClicked1, true);
+  var btn2 = document.getElementById("table-button2");
+  btn2.addEventListener("click", buttonClicked2, true);
+  var btn3 = document.getElementById("table-button3");
+  btn3.addEventListener("click", buttonClicked3, true);
+  var btn4 = document.getElementById("table-button4");
+  btn4.addEventListener("click", buttonClicked4, true);
+};
+  </script>
+</html>
